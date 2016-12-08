@@ -31,13 +31,22 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Repeater modelListRepeater;
         
         /// <summary>
-        /// From Mail address control.
+        /// saveNewJsonFile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox From Mail address;
+        protected global::System.Web.UI.WebControls.Button saveNewJsonFile;
+        
+        /// <summary>
+        /// fromMailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fromMailAddress;
         
         /// <summary>
         /// sendMailButton control.

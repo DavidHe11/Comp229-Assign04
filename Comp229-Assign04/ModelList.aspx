@@ -26,8 +26,10 @@
         </ItemTemplate>
     </asp:Repeater>
         <div class="col-xs-12 col-md-4">
+            Create a new file:
+            <asp:button runat="server" ID="saveNewJsonFile" />
             Send us a update of the file for yourself:
-            From:<asp:TextBox runat="server" ID="From Mail address"></asp:TextBox>
+            From:<asp:TextBox runat="server" ID="fromMailAddress"></asp:TextBox>
             <asp:Button runat="server" ID="sendMailButton" />
         </div>
     </div>
