@@ -26,7 +26,14 @@ public class ModelData
     public Action[] actions { get; set; }
     public Specialability[] specialAbilities { get; set; }
     public string imageUrl { get; set; }
+
+    public ModelData(string newName, string newFaction)
+    {
+        name = newName;
+        faction = newFaction;
+    }
 }
+
 
 public class Action
 {

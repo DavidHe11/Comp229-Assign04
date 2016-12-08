@@ -26,7 +26,15 @@ namespace Comp229_Assign04
 
         protected void saveNewJsonFile_Click(object sender, EventArgs e)
         {
-            Global.CreateAJsonFile();
+            try
+            {
+                Global.CreateAJsonFile();
+                fileCreationConfirmation.Text = "file created!";
+            }
+            catch(Exception ex)
+            {
+                fileCreationConfirmation.Text = "file couldn't be created!";
+            }
         }
 
         protected void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
@@ -64,6 +72,12 @@ namespace Comp229_Assign04
         protected void sendMailButton_Click(object sender, EventArgs e)
         {
             EmailJsonFile(fromMailAddressTB.Text, nameTB.Text, "Assign04Updated.json");
+        }
+
+        protected void createCharacter_Click(object sender, EventArgs e)
+        {
+            ModelData createCharacter = new ModelData(createNameTB.Text, createfactionTB.Text);
+            Response.Redirect("~/ModelView.aspx?name=" + createNameTB.Text + "&faction=" + createfactionTB.Text);
         }
     }
 }

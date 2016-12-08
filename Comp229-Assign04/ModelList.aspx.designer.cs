@@ -31,6 +31,15 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Button saveNewJsonFile;
         
         /// <summary>
+        /// fileCreationConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fileCreationConfirmation;
+        
+        /// <summary>
         /// nameTB control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,32 @@ namespace Comp229_Assign04 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label mailConfirmation;
+        
+        /// <summary>
+        /// createNameTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox createNameTB;
+        
+        /// <summary>
+        /// createfactionTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox createfactionTB;
+        
+        /// <summary>
+        /// createCharacter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button createCharacter;
     }
 }
