@@ -11,7 +11,16 @@ namespace Comp229_Assign04
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            title.Text = Page.Title;
 
+            displayModels();
+        }
+        protected void displayModels()
+        {
+            
+            modelListRepeater.DataSource = Global.Models;
+            modelListRepeater.DataBind();
+            
         }
     }
 }

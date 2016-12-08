@@ -8,12 +8,6 @@ namespace Comp229_Assign04.Models
 
 }
 
-
-public class Rootobject
-{
-    public ModelData[] Property1 { get; set; }
-}
-
 public class ModelData
 {
     public string name { get; set; }

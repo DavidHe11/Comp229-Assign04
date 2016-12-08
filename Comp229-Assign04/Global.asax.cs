@@ -23,6 +23,8 @@ namespace Comp229_Assign04
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            createModelCollection();
         }
 
         private void createModelCollection()
@@ -33,8 +35,8 @@ namespace Comp229_Assign04
                 var jsonString = reader.ReadToEnd();
                 Models = JsonConvert.DeserializeObject<List<ModelData>>(jsonString);
             };
-            
-         }
+
+        }
         public static void CreateAJsonFile()
         {
             /*Creates a Json file with new data.*/
@@ -44,3 +46,5 @@ namespace Comp229_Assign04
             }
 
         }
+    }
+}
