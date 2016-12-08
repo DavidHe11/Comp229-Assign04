@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="col-xs-12 col-md-4 Title">
-        <asp:Label ID="title" runat="server"></asp:Label>
         
         <asp:Label ID="namelbl" runat="server"></asp:Label>
     

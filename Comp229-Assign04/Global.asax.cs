@@ -17,6 +17,10 @@ namespace Comp229_Assign04
         private static string jsonModelFilePath = ("~/Data/Assign04.json");
         private static string jsonOutputFilePath = ("~/Data/NewModelsAssign04.json");
 
+        public static string getJsonModelFilePath()
+        {
+            return jsonModelFilePath;
+        }
 
         void Application_Start(object sender, EventArgs e)
         {

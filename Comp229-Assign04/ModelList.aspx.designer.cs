@@ -13,15 +13,6 @@ namespace Comp229_Assign04 {
     public partial class _Default {
         
         /// <summary>
-        /// title control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
-        
-        /// <summary>
         /// modelListRepeater control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,22 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Button saveNewJsonFile;
         
         /// <summary>
-        /// fromMailAddress control.
+        /// nameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fromMailAddress;
+        protected global::System.Web.UI.WebControls.TextBox nameTB;
+        
+        /// <summary>
+        /// fromMailAddressTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fromMailAddressTB;
         
         /// <summary>
         /// sendMailButton control.
@@ -56,5 +56,14 @@ namespace Comp229_Assign04 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button sendMailButton;
+        
+        /// <summary>
+        /// mailConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mailConfirmation;
     }
 }

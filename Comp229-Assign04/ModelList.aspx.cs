@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,9 +12,8 @@ namespace Comp229_Assign04
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            title.Text = Page.Title;
-
             displayModels();
+            
         }
         protected void displayModels()
         {
@@ -21,6 +21,49 @@ namespace Comp229_Assign04
             modelListRepeater.DataSource = Global.Models;
             modelListRepeater.DataBind();
             
+            
+        }
+
+        protected void saveNewJsonFile_Click(object sender, EventArgs e)
+        {
+            Global.CreateAJsonFile();
+        }
+
+        protected void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            
+            MailMessage message = new MailMessage();
+            try
+            {
+                MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
+                MailAddress toAddress = new MailAddress(clientEmailAddress, clientName);
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "David He 300844568 Comp229-Assign04 email";
+                message.Body = "Here is your new file!";
+                smtpClient.Host = "smtp-mail.outlook.com";
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
+                System.Net.Mime.ContentType contentType = new System.Net.Mime.ContentType();
+                contentType.MediaType = System.Net.Mime.MediaTypeNames.Application.Octet;
+                contentType.Name = attachmentFileName;
+                message.Attachments.Add(new Attachment(System.Web.Hosting.HostingEnvironment.MapPath(Global.getJsonModelFilePath()), contentType));
+
+                smtpClient.Send(message);
+                mailConfirmation.Text = "Email Sent";
+            }
+            catch (Exception ex)
+            {
+                mailConfirmation.Text = "Couldn't send the message!";
+            }
+        }
+
+        protected void sendMailButton_Click(object sender, EventArgs e)
+        {
+            EmailJsonFile(fromMailAddressTB.Text, nameTB.Text, "Assign04Updated.json");
         }
     }
 }

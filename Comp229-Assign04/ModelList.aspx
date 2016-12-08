@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="Model List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModelList.aspx.cs" Inherits="Comp229_Assign04._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-xs-12 col-md-4 Title">
-        <asp:Label ID="title" runat="server"></asp:Label>
-    </div>
+    
     <div class="col-xs-12 col-md-4">
             <table>
              <tr>
@@ -27,10 +25,12 @@
     </asp:Repeater>
         <div class="col-xs-12 col-md-4">
             Create a new file:
-            <asp:button runat="server" ID="saveNewJsonFile" />
-            Send us a update of the file for yourself:
-            From:<asp:TextBox runat="server" ID="fromMailAddress"></asp:TextBox>
-            <asp:Button runat="server" ID="sendMailButton" />
+            <asp:button runat="server" ID="saveNewJsonFile" OnClick="saveNewJsonFile_Click" Text="Create File" />
+            Send a update of the file for yourself:
+            Name:<asp:TextBox runat="server" ID="nameTB"></asp:TextBox>
+            To:<asp:TextBox runat="server" ID="fromMailAddressTB"></asp:TextBox>
+            <asp:Button runat="server" ID="sendMailButton" OnClick="sendMailButton_Click" Text="Send Mail" />
+            <asp:label runat="server" ID="mailConfirmation"></asp:label>
         </div>
     </div>
 </asp:Content>
