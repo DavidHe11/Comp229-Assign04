@@ -77,6 +77,14 @@ namespace Comp229_Assign04
         protected void createCharacter_Click(object sender, EventArgs e)
         {
             ModelData createCharacter = new ModelData(createNameTB.Text, createfactionTB.Text);
+            List<ModelData> templist = new List<ModelData>();
+
+            templist = Global.Models.ToList();
+
+            templist.Add(createCharacter);
+
+            Global.Models = templist;
+
             Response.Redirect("~/ModelView.aspx?name=" + createNameTB.Text + "&faction=" + createfactionTB.Text);
         }
     }
