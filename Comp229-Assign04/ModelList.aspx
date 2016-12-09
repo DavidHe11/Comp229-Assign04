@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-4 divBody">
             <table>
              <tr>
                  <td>Name:</td>
@@ -22,24 +22,24 @@
         </ItemTemplate>
     </asp:Repeater>
                  </table>
-        <div class="col-md-4 col-xs-12">
+        </div>
+        <div class="col-md-4 col-xs-12 divColor">
             Create a new file:
-            <asp:button runat="server" ID="saveNewJsonFile" OnClick="saveNewJsonFile_Click" Text="Create File" />
+            <asp:button CssClass="btn" runat="server" ID="saveNewJsonFile" OnClick="saveNewJsonFile_Click" Text="Create File" /><br />
             <asp:Label runat="server" ID="fileCreationConfirmation"></asp:Label>
             </div>
-        <div class="col-md-4 col-xs-12">
-            Send a update of the file for yourself:
-            Name:<asp:TextBox runat="server" ID="nameTB"></asp:TextBox>
-            To:<asp:TextBox runat="server" ID="fromMailAddressTB"></asp:TextBox>
-            <asp:Button runat="server" ID="sendMailButton" OnClick="sendMailButton_Click" Text="Send Mail" />
+        <div class="col-md-4 col-xs-12 divColor">
+            Send a update of the file for yourself:<br />
+            Name:<asp:TextBox runat="server" ID="nameTB"></asp:TextBox><br />
+            To:<asp:TextBox runat="server" ID="fromMailAddressTB"></asp:TextBox><br /><br />
+            <asp:Button CssClass="btn" runat="server" ID="sendMailButton" OnClick="sendMailButton_Click" Text="Send Mail" /><br />
             <asp:label runat="server" ID="mailConfirmation"></asp:label>
         </div>
-        <div class="col-md-4 col-xs-12">
-            Create a new character:
-            Name: <asp:TextBox runat="server" ID="createNameTB"></asp:TextBox>
-            Faction: <asp:TextBox runat="server" ID="createfactionTB"></asp:TextBox>
-            
-            <asp:Button runat="server" ID="createCharacter" OnClick="createCharacter_Click" Text="Create Character!" />
+        <div class="col-md-4 col-xs-12 divColor">
+            Create a new character:<br />
+            Name: <asp:TextBox runat="server" ID="createNameTB"></asp:TextBox><br />
+            Faction: <asp:TextBox runat="server" ID="createfactionTB"></asp:TextBox><br /><br />
+            <asp:Button CssClass="btn" runat="server" ID="createCharacter" OnClick="createCharacter_Click" Text="Create Character!" /><br />
         </div>
-    </div>
+    
 </asp:Content>

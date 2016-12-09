@@ -22,6 +22,24 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Image figureImage;
         
         /// <summary>
+        /// updateCharacter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button updateCharacter;
+        
+        /// <summary>
+        /// deleteCharacter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteCharacter;
+        
+        /// <summary>
         /// nameLbl control.
         /// </summary>
         /// <remarks>

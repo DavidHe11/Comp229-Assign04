@@ -10,6 +10,7 @@ namespace Comp229_Assign04
     public partial class ModelView : System.Web.UI.Page
     {
         private ModelData currentModel;
+        private ModelData deleteModel;
         private List<Action> actions = new List<Action>();
         private List<Specialability> specials = new List<Specialability>();
 
@@ -73,5 +74,28 @@ namespace Comp229_Assign04
 
         }
 
+        protected void updateCharacter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void deleteCharacter_Click(object sender, EventArgs e)
+        {
+            var name = Request.QueryString["name"];
+            var faction = Request.QueryString["faction"];
+            List<ModelData> tempList = new List<ModelData>();
+
+            tempList = Global.Models.ToList();
+
+
+            var readitem = (from model in tempList where model.name == name & model.faction == faction select model).ToList();
+
+            foreach (ModelData model in readitem)
+            {
+                tempList.Remove(model);
+            }
+
+            Response.Redirect("~/ModelList.aspx");
+        }
     }
 }

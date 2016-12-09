@@ -1,9 +1,11 @@
 ﻿<%@ Page Title="Model View" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="ModelView.aspx.cs" Inherits="Comp229_Assign04.ModelView" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-4 divBody">
         <div class="col-xs-12 col-md-4 leftFloat">
         <asp:Image runat="server" ID="figureImage" Width="200px" />
+            <asp:Button CssClass="btn" runat="server" ID="updateCharacter" OnClick="updateCharacter_Click" Text="Update Character" /><br /><br /><br />
+            <asp:Button CssClass="btn" runat="server" ID="deleteCharacter" OnClick="deleteCharacter_Click" Text="Delete Character" />
             </div>
         <div class="col-xs-12 col-md-4 rightFloat">
             <table>
