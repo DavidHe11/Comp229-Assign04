@@ -10,7 +10,6 @@ namespace Comp229_Assign04
     public partial class ModelView : System.Web.UI.Page
     {
         private ModelData currentModel;
-        private ModelData deleteModel;
         private List<Action> actions = new List<Action>();
         private List<Specialability> specials = new List<Specialability>();
 
@@ -76,7 +75,10 @@ namespace Comp229_Assign04
 
         protected void updateCharacter_Click(object sender, EventArgs e)
         {
+            var name = Request.QueryString["name"];
+            var faction = Request.QueryString["faction"];
 
+            Response.Redirect("~/UpdatePage.aspx?name=" + name + "&faction=" + faction);
         }
 
         protected void deleteCharacter_Click(object sender, EventArgs e)
@@ -94,6 +96,8 @@ namespace Comp229_Assign04
             {
                 tempList.Remove(model);
             }
+
+            Global.Models = tempList;
 
             Response.Redirect("~/ModelList.aspx");
         }

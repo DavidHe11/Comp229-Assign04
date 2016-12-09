@@ -3,6 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
     <div class="col-xs-12 col-md-4 divBody">
+        <div>
+            Wrath of Slings Models:
+        </div>
             <table>
              <tr>
                  <td>Name:</td>
