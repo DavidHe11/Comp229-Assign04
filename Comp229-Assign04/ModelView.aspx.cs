@@ -9,7 +9,9 @@ namespace Comp229_Assign04
 {
     public partial class ModelView : System.Web.UI.Page
     {
-        private ModelData CurrentModel;
+        private ModelData currentModel;
+        private List<Action> actions = new List<Action>();
+        private List<Specialability> specials = new List<Specialability>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,10 +30,44 @@ namespace Comp229_Assign04
             }
 
             
-            CurrentModel = Global.Models.FirstOrDefault(t => t.name == name & t.faction == faction);
+            currentModel = Global.Models.FirstOrDefault(t => t.name == name & t.faction == faction);
 
-            namelbl.Text = CurrentModel.name.ToString();
+            for (int i = 0; i < currentModel.actions.Length; i++)
+            {
+                if (currentModel.actions != null)
+                {
+                    actions.Add(currentModel.actions[i]);
+                }
+            }
+            for (int i = 0; i < currentModel.actions.Length; i++)
+            {
+                if (currentModel.specialAbilities != null)
+                {
+                    specials.Add(currentModel.specialAbilities[i]);
+                }
+            }
 
+            figureImage.ImageUrl = currentModel.imageUrl;
+            nameLbl.Text = currentModel.name;
+            factionLbl.Text = currentModel.faction;
+            RankLbl.Text = currentModel.rank.ToString();
+            baseLbl.Text = currentModel._base.ToString();
+            sizeLbl.Text = currentModel.size.ToString() + " mm";
+            deploymentLbl.Text = currentModel.deploymentZone;
+            traitsRepeater.DataSource = currentModel.traits;
+            traitsRepeater.DataBind();
+            typeRepeater.DataSource = currentModel.types;
+            typeRepeater.DataBind();
+            defenceRepeater.DataSource = currentModel.defenseChart;
+            defenceRepeater.DataBind(); 
+            mobilityLbl.Text = currentModel.mobility.ToString();
+            willpowerLbl.Text = currentModel.willpower.ToString();
+            resilianceLbl.Text = currentModel.resiliance.ToString();
+            woundsLbl.Text = currentModel.wounds.ToString();
+            actionsRepeater.DataSource = actions;
+            actionsRepeater.DataBind();
+            specialAbilitiesRepeater.DataSource = specials;
+            specialAbilitiesRepeater.DataBind();
 
 
 

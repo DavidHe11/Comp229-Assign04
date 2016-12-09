@@ -1,0 +1,13 @@
+﻿.bodyColors{
+    background-color:sandybrown;
+    width:100%;
+}
+
+.leftFloat{
+    float:left;
+    width:400px;
+}
+.rightFloat{
+    float:right;
+}
+
