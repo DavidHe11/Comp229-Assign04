@@ -52,7 +52,7 @@ namespace Comp229_Assign04
             factionTB.Text = currentModel.faction;
             RankTB.Text = currentModel.rank.ToString();
             baseTB.Text = currentModel._base.ToString();
-            sizeTB.Text = currentModel.size.ToString() + " mm";
+            sizeTB.Text = currentModel.size.ToString();
             deploymentTB.Text = currentModel.deploymentZone;
             traitsRepeater.DataSource = currentModel.traits;
             traitsRepeater.DataBind();
@@ -85,25 +85,29 @@ namespace Comp229_Assign04
             currentModel.size = Int32.Parse(sizeTB.Text);
             currentModel.deploymentZone = deploymentTB.Text;
             string[] updateTraits = new string[100];
-            foreach(RepeaterItem trait in traitsRepeater.Items)
-            {
-                updateTraits[trait.ItemIndex] = trait.ToString();
-            }
-            currentModel.traits = updateTraits;
+            
+            //No idea how to deal with this if this doesn't work.
+            //foreach(RepeaterItem trait in traitsRepeater.Items)
+            //{
+            //    updateTraits[trait.ItemIndex] = trait.ToString();
+            //}
+            //currentModel.traits = updateTraits;
 
 
             string[] updatetypes = new string[100];
-            foreach (RepeaterItem type in typeRepeater.Items)
-            {
-                updatetypes[type.ItemIndex] = type.ToString();
-            }
-            currentModel.types = updatetypes;
+            //No idea how to deal with this if this doesn't work.
+            //foreach (RepeaterItem type in typeRepeater.Items)
+            //{
+            //    updatetypes[type.ItemIndex] = type.ToString();
+            //}
+            //currentModel.types = updatetypes;
 
             string[] updatedefenseChart = new string[100];
-            foreach (RepeaterItem defence in defenceRepeater.Items)
-            {
-                updatedefenseChart[defence.ItemIndex] = defence.ToString();
-            }
+            //No idea how to deal with this if this doesn't work.
+            //foreach (RepeaterItem defence in defenceRepeater.Items)
+            //{
+            //    updatedefenseChart[defence.ItemIndex] = defence.ToString();
+            //}
             currentModel.defenseChart = updatedefenseChart;
 
             currentModel.mobility = Int32.Parse(mobilityTB.Text);
@@ -111,30 +115,31 @@ namespace Comp229_Assign04
             currentModel.resiliance = Int32.Parse(resilianceTB.Text);
             currentModel.wounds = Int32.Parse(woundsTB.Text);
 
-
+            //No idea how to deal with this if this doesn't work.
             Action[] updateactions = new Action[100];
             foreach (RepeaterItem action in actionsRepeater.Items)
-            {
-                Action tempAction = new Action();
-                tempAction.name = (action.FindControl("actionName") as TextBox).Text;
-                tempAction.type = (action.FindControl("actionType") as TextBox).Text;
-                tempAction.rating = Int32.Parse((action.FindControl("actionRating") as TextBox).Text);
-                tempAction.range = (action.FindControl("actionRange") as TextBox).Text;
-                tempAction.description = (action.FindControl("actionDesc") as TextBox).Text;
+            //{
+            //    Action tempAction = new Action();
+            //    tempAction.name = (action.FindControl("actionName") as TextBox).Text;
+            //    tempAction.type = (action.FindControl("actionType") as TextBox).Text;
+            //    tempAction.rating = Int32.Parse((action.FindControl("actionRating") as TextBox).Text);
+            //    tempAction.range = (action.FindControl("actionRange") as TextBox).Text;
+            //    tempAction.description = (action.FindControl("actionDesc") as TextBox).Text;
 
-                updateactions[action.ItemIndex] = tempAction;
-            }
+            //    updateactions[action.ItemIndex] = tempAction;
+            //}
             currentModel.actions = updateactions;
 
+            //No idea how to deal with this if this doesn't work.
             Specialability[] updatespecialAbilities = new Specialability[100];
-            foreach(RepeaterItem special in specialAbilitiesRepeater.Items)
-            {
-                Specialability tempSpecial = new Specialability();
-                tempSpecial.name = (special.FindControl("specialName")as TextBox).Text;
-                tempSpecial.description = (special.FindControl("specialDesc") as TextBox).Text;
-                updatespecialAbilities[special.ItemIndex] = tempSpecial;
-            }
-            currentModel.specialAbilities = updatespecialAbilities;
+            //foreach(RepeaterItem special in specialAbilitiesRepeater.Items)
+            //{
+            //    Specialability tempSpecial = new Specialability();
+            //    tempSpecial.name = (special.FindControl("specialName")as TextBox).Text;
+            //    tempSpecial.description = (special.FindControl("specialDesc") as TextBox).Text;
+            //    updatespecialAbilities[special.ItemIndex] = tempSpecial;
+            //}
+            //currentModel.specialAbilities = updatespecialAbilities;
             
 
             tempList = Global.Models.ToList();

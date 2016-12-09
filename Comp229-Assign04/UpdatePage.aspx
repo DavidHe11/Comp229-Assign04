@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <td>Size</td>
-                    <td><asp:Textbox ID="sizeTB" runat="server"></asp:Textbox></td>
+                    <td><asp:Textbox ID="sizeTB" runat="server"></asp:Textbox> mm</td>
                 </tr>
                 <tr>
                     <td>Deployment Zone:</td>
